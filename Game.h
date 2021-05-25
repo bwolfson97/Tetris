@@ -6,16 +6,23 @@
 #include "UserInterface.h"
 #include <string>
 
-enum SpecialControls {QUIT, SPACEBAR, DOWN, NORMAL, NOTHING};
+enum SpecialControls
+{
+	QUIT,
+	SPACEBAR,
+	DOWN,
+	NORMAL,
+	NOTHING
+};
 
 class Game
 {
-  public:
-    Game(int width, int height);
-    void play();
+public:
+	Game(int width, int height);
+	void play();
 	// Plays a game of Chetyris.
-	
-  private:
+
+private:
 	// Class invariant:
 	//	m_well is the well of width and height passed by the user to the Game constructor
 	//	m_screen is the screen that the user sees
@@ -23,11 +30,11 @@ class Game
 	//	m_score >= 0
 	//	m_rowsLeft is 5 * m_level, at the start of each level. m_rowsLeft >= 0
 
-    Well    m_well;
-    Screen  m_screen;
-    int     m_level;
-	int		m_score;
-	int		m_rowsLeft;
+	Well m_well;
+	Screen m_screen;
+	int m_level;
+	int m_score;
+	int m_rowsLeft;
 
 	// Helper functions
 	bool playOneLevel();

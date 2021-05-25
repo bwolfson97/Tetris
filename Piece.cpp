@@ -7,162 +7,137 @@ using std::vector;
 ///////////////////////////////////////////////////////////////
 
 const char i02[BOX_LEN][BOX_LEN] = {
-	{ ' ', ' ', ' ', ' ' },
-{ '#', '#', '#', '#' },
-{ ' ', ' ', ' ', ' ' },
-{ ' ', ' ', ' ', ' ' }
-};
+	{' ', ' ', ' ', ' '},
+	{'#', '#', '#', '#'},
+	{' ', ' ', ' ', ' '},
+	{' ', ' ', ' ', ' '}};
 const char i13[BOX_LEN][BOX_LEN] = {
-	{ ' ', '#', ' ', ' ' },
-{ ' ', '#', ' ', ' ' },
-{ ' ', '#', ' ', ' ' },
-{ ' ', '#', ' ', ' ' }
-};
+	{' ', '#', ' ', ' '},
+	{' ', '#', ' ', ' '},
+	{' ', '#', ' ', ' '},
+	{' ', '#', ' ', ' '}};
 const char l0[BOX_LEN][BOX_LEN] = {
-	{ ' ', ' ', ' ', ' ' },
-{ '#', '#', '#', ' ' },
-{ '#', ' ', ' ', ' ' },
-{ ' ', ' ', ' ', ' ' }
-};
+	{' ', ' ', ' ', ' '},
+	{'#', '#', '#', ' '},
+	{'#', ' ', ' ', ' '},
+	{' ', ' ', ' ', ' '}};
 const char l1[BOX_LEN][BOX_LEN] = {
-	{ ' ', '#', '#', ' ' },
-{ ' ', ' ', '#', ' ' },
-{ ' ', ' ', '#', ' ' },
-{ ' ', ' ', ' ', ' ' }
-};
+	{' ', '#', '#', ' '},
+	{' ', ' ', '#', ' '},
+	{' ', ' ', '#', ' '},
+	{' ', ' ', ' ', ' '}};
 const char l2[BOX_LEN][BOX_LEN] = {
-	{ ' ', ' ', ' ', ' ' },
-{ ' ', ' ', '#', ' ' },
-{ '#', '#', '#', ' ' },
-{ ' ', ' ', ' ', ' ' }
-};
+	{' ', ' ', ' ', ' '},
+	{' ', ' ', '#', ' '},
+	{'#', '#', '#', ' '},
+	{' ', ' ', ' ', ' '}};
 const char l3[BOX_LEN][BOX_LEN] = {
-	{ ' ', ' ', ' ', ' ' },
-{ ' ', '#', ' ', ' ' },
-{ ' ', '#', ' ', ' ' },
-{ ' ', '#', '#', ' ' }
-};
+	{' ', ' ', ' ', ' '},
+	{' ', '#', ' ', ' '},
+	{' ', '#', ' ', ' '},
+	{' ', '#', '#', ' '}};
 const char jj0[BOX_LEN][BOX_LEN] = {
-	{ ' ', ' ', ' ', ' ' },
-{ ' ', '#', '#', '#' },
-{ ' ', ' ', ' ', '#' },
-{ ' ', ' ', ' ', ' ' }
-};
+	{' ', ' ', ' ', ' '},
+	{' ', '#', '#', '#'},
+	{' ', ' ', ' ', '#'},
+	{' ', ' ', ' ', ' '}};
 const char jj1[BOX_LEN][BOX_LEN] = {
-	{ ' ', ' ', ' ', ' ' },
-{ ' ', ' ', '#', ' ' },
-{ ' ', ' ', '#', ' ' },
-{ ' ', '#', '#', ' ' }
-};
+	{' ', ' ', ' ', ' '},
+	{' ', ' ', '#', ' '},
+	{' ', ' ', '#', ' '},
+	{' ', '#', '#', ' '}};
 const char j2[BOX_LEN][BOX_LEN] = {
-	{ ' ', ' ', ' ', ' ' },
-{ ' ', '#', ' ', ' ' },
-{ ' ', '#', '#', '#' },
-{ ' ', ' ', ' ', ' ' }
-};
+	{' ', ' ', ' ', ' '},
+	{' ', '#', ' ', ' '},
+	{' ', '#', '#', '#'},
+	{' ', ' ', ' ', ' '}};
 const char j3[BOX_LEN][BOX_LEN] = {
-	{ ' ', '#', '#', ' ' },
-{ ' ', '#', ' ', ' ' },
-{ ' ', '#', ' ', ' ' },
-{ ' ', ' ', ' ', ' ' }
-};
+	{' ', '#', '#', ' '},
+	{' ', '#', ' ', ' '},
+	{' ', '#', ' ', ' '},
+	{' ', ' ', ' ', ' '}};
 const char t0[BOX_LEN][BOX_LEN] = {
-	{ ' ', '#', ' ', ' ' },
-{ '#', '#', '#', ' ' },
-{ ' ', ' ', ' ', ' ' },
-{ ' ', ' ', ' ', ' ' }
-};
+	{' ', '#', ' ', ' '},
+	{'#', '#', '#', ' '},
+	{' ', ' ', ' ', ' '},
+	{' ', ' ', ' ', ' '}};
 const char t1[BOX_LEN][BOX_LEN] = {
-	{ ' ', '#', ' ', ' ' },
-{ ' ', '#', '#', ' ' },
-{ ' ', '#', ' ', ' ' },
-{ ' ', ' ', ' ', ' ' }
-};
+	{' ', '#', ' ', ' '},
+	{' ', '#', '#', ' '},
+	{' ', '#', ' ', ' '},
+	{' ', ' ', ' ', ' '}};
 const char t2[BOX_LEN][BOX_LEN] = {
-	{ ' ', ' ', ' ', ' ' },
-{ '#', '#', '#', ' ' },
-{ ' ', '#', ' ', ' ' },
-{ ' ', ' ', ' ', ' ' }
-};
+	{' ', ' ', ' ', ' '},
+	{'#', '#', '#', ' '},
+	{' ', '#', ' ', ' '},
+	{' ', ' ', ' ', ' '}};
 const char t3[BOX_LEN][BOX_LEN] = {
-	{ ' ', '#', ' ', ' ' },
-{ '#', '#', ' ', ' ' },
-{ ' ', '#', ' ', ' ' },
-{ ' ', ' ', ' ', ' ' }
-};
+	{' ', '#', ' ', ' '},
+	{'#', '#', ' ', ' '},
+	{' ', '#', ' ', ' '},
+	{' ', ' ', ' ', ' '}};
 const char o0[BOX_LEN][BOX_LEN] = {
-	{ '#', '#', ' ', ' ' },
-{ '#', '#', ' ', ' ' },
-{ ' ', ' ', ' ', ' ' },
-{ ' ', ' ', ' ', ' ' }
-};
+	{'#', '#', ' ', ' '},
+	{'#', '#', ' ', ' '},
+	{' ', ' ', ' ', ' '},
+	{' ', ' ', ' ', ' '}};
 const char s02[BOX_LEN][BOX_LEN] = {
-	{ ' ', ' ', ' ', ' ' },
-{ ' ', '#', '#', ' ' },
-{ '#', '#', ' ', ' ' },
-{ ' ', ' ', ' ', ' ' }
-};
+	{' ', ' ', ' ', ' '},
+	{' ', '#', '#', ' '},
+	{'#', '#', ' ', ' '},
+	{' ', ' ', ' ', ' '}};
 const char s13[BOX_LEN][BOX_LEN] = {
-	{ ' ', '#', ' ', ' ' },
-{ ' ', '#', '#', ' ' },
-{ ' ', ' ', '#', ' ' },
-{ ' ', ' ', ' ', ' ' }
-};
+	{' ', '#', ' ', ' '},
+	{' ', '#', '#', ' '},
+	{' ', ' ', '#', ' '},
+	{' ', ' ', ' ', ' '}};
 const char z02[BOX_LEN][BOX_LEN] = {
-	{ ' ', ' ', ' ', ' ' },
-{ '#', '#', ' ', ' ' },
-{ ' ', '#', '#', ' ' },
-{ ' ', ' ', ' ', ' ' }
-};
+	{' ', ' ', ' ', ' '},
+	{'#', '#', ' ', ' '},
+	{' ', '#', '#', ' '},
+	{' ', ' ', ' ', ' '}};
 const char z13[BOX_LEN][BOX_LEN] = {
-	{ ' ', ' ', '#', ' ' },
-{ ' ', '#', '#', ' ' },
-{ ' ', '#', ' ', ' ' },
-{ ' ', ' ', ' ', ' ' }
-};
+	{' ', ' ', '#', ' '},
+	{' ', '#', '#', ' '},
+	{' ', '#', ' ', ' '},
+	{' ', ' ', ' ', ' '}};
 const char v0[BOX_LEN][BOX_LEN] = {
-	{ ' ', '#', '#', ' ' },
-{ ' ', ' ', ' ', ' ' },
-{ ' ', ' ', ' ', ' ' },
-{ ' ', ' ', ' ', ' ' }
-};
+	{' ', '#', '#', ' '},
+	{' ', ' ', ' ', ' '},
+	{' ', ' ', ' ', ' '},
+	{' ', ' ', ' ', ' '}};
 const char f0[BOX_LEN][BOX_LEN] = {
-	{ ' ', ' ', ' ', ' ' },
-{ ' ', '#', ' ', ' ' },
-{ ' ', ' ', ' ', ' ' },
-{ ' ', ' ', ' ', ' ' }
-};
+	{' ', ' ', ' ', ' '},
+	{' ', '#', ' ', ' '},
+	{' ', ' ', ' ', ' '},
+	{' ', ' ', ' ', ' '}};
 const char c0[BOX_LEN][BOX_LEN] = {
-	{ '#', ' ', ' ', '#' },
-{ ' ', '#', '#', ' ' },
-{ ' ', ' ', ' ', ' ' },
-{ ' ', ' ', ' ', ' ' }
-};
+	{'#', ' ', ' ', '#'},
+	{' ', '#', '#', ' '},
+	{' ', ' ', ' ', ' '},
+	{' ', ' ', ' ', ' '}};
 const char c1[BOX_LEN][BOX_LEN] = {
-	{ ' ', ' ', ' ', '#' },
-{ ' ', ' ', '#', ' ' },
-{ ' ', ' ', '#', ' ' },
-{ ' ', ' ', ' ', '#' }
-};
+	{' ', ' ', ' ', '#'},
+	{' ', ' ', '#', ' '},
+	{' ', ' ', '#', ' '},
+	{' ', ' ', ' ', '#'}};
 const char c2[BOX_LEN][BOX_LEN] = {
-	{ ' ', ' ', ' ', ' ' },
-{ ' ', ' ', ' ', ' ' },
-{ ' ', '#', '#', ' ' },
-{ '#', ' ', ' ', '#' }
-};
+	{' ', ' ', ' ', ' '},
+	{' ', ' ', ' ', ' '},
+	{' ', '#', '#', ' '},
+	{'#', ' ', ' ', '#'}};
 const char c3[BOX_LEN][BOX_LEN] = {
-	{ '#', ' ', ' ', ' ' },
-{ ' ', '#', ' ', ' ' },
-{ ' ', '#', ' ', ' ' },
-{ '#', ' ', ' ', ' ' }
-};
+	{'#', ' ', ' ', ' '},
+	{' ', '#', ' ', ' '},
+	{' ', '#', ' ', ' '},
+	{'#', ' ', ' ', ' '}};
 
 ///////////////////////////////////////////////////////////////
 // Interface functions
 ///////////////////////////////////////////////////////////////
 
 Piece::Piece(PieceType piece)
-	:m_x(4), m_y(0), m_orientation(0)
+	: m_x(4), m_y(0), m_orientation(0)
 {
 	switch (piece)
 	{
@@ -199,39 +174,39 @@ Piece::Piece(PieceType piece)
 	}
 }
 
-bool VaporBomb::performSpecialAction(vector<vector<char>>& board) const
+bool VaporBomb::performSpecialAction(vector<vector<char>> &board) const
 {
 	// Iterate over the 2x5 box that the vapor bomb clears out
 	int startX = getX() + 1, endX = startX + 2;
 	int startY = getY() - 2, endY = startY + 5;
 	for (int row = startY; row < endY; row++)
 	{
-		if (row < 0)	// Check if we will go past the top of the well
+		if (row < 0) // Check if we will go past the top of the well
 			break;
-		if (board[row][startX] == '@')	// Check if we hit the bottom of the well
+		if (board[row][startX] == '@') // Check if we hit the bottom of the well
 			break;
 
 		for (int col = startX; col < endX; col++)
 		{
-			if (board[startY][col] == '@')	// Check if we hit the wall of the well
+			if (board[startY][col] == '@') // Check if we hit the wall of the well
 				break;
 
 			// If there is something in the well here, vaporize it
 			if (board[row][col] == '$' || board[row][col] == '*')
 				board[row][col] = ' ';
-		}	
+		}
 	}
 	return true;
 }
 
-bool FoamBomb::performSpecialAction(vector<vector<char>>& board) const
+bool FoamBomb::performSpecialAction(vector<vector<char>> &board) const
 {
 	// Pass in the position of the foam bomb, not the bouding box
 	foamBombHelper(board, getY() + 1, getX() + 1);
 	return true;
 }
 
-void FoamBomb::foamBombHelper(vector<vector<char>>& board, int row, int col) const
+void FoamBomb::foamBombHelper(vector<vector<char>> &board, int row, int col) const
 {
 	// Iterate over the 5x5 box that the foam bomb covers
 	const int minCol = getX() - 1, maxCol = getX() + 3;
@@ -240,9 +215,9 @@ void FoamBomb::foamBombHelper(vector<vector<char>>& board, int row, int col) con
 	// Base cases
 	if (row < minRow || row > maxRow || col < minCol || col > maxCol) // check that space is within 5x5 box
 		return;
-	if (row < 0)	// Don't search past the top of the well
+	if (row < 0) // Don't search past the top of the well
 		return;
-	if (board[row][col] == '@')	// Don't search past the well's walls
+	if (board[row][col] == '@') // Don't search past the well's walls
 		return;
 
 	// Space is valid, leave a *
@@ -263,7 +238,7 @@ void FoamBomb::foamBombHelper(vector<vector<char>>& board, int row, int col) con
 // Helper functions
 ///////////////////////////////////////////////////////////////
 
-void Piece::createBoxes(const char box0[BOX_LEN][BOX_LEN], const  char box1[BOX_LEN][BOX_LEN], const  char box2[BOX_LEN][BOX_LEN], const  char box3[BOX_LEN][BOX_LEN])
+void Piece::createBoxes(const char box0[BOX_LEN][BOX_LEN], const char box1[BOX_LEN][BOX_LEN], const char box2[BOX_LEN][BOX_LEN], const char box3[BOX_LEN][BOX_LEN])
 {
 	for (int i = 0; i < BOX_LEN; i++)
 	{

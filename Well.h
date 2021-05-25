@@ -9,11 +9,11 @@ class Screen;
 
 class Well
 {
-  public:
+public:
 	Well(int width, int height);
 	~Well();
 
-    void display(Screen& screen, int x, int y) const;
+	void display(Screen &screen, int x, int y) const;
 	// Displays m_board to the screen.
 	bool readyForNextPiece() const { return m_currentPiece == nullptr; }
 	// Returns true if no piece is currently in play(falling), otherwise  returns false.
@@ -24,7 +24,7 @@ class Well
 	bool rotatePiece();
 	// Rotates piece to next orientation.
 	int updateAfterOneTimeUnit();
-	// Shifts the current piece down one row and returns the number of rows vaporized if 
+	// Shifts the current piece down one row and returns the number of rows vaporized if
 	//	the piece has come to rest.
 	void emptyWell();
 	// Makes the well empty.
@@ -36,14 +36,14 @@ private:
 	//	m_depth is the depth of the well (including the bottom)
 	//	m_width is the width of the well (including the walls)
 
-	Piece* m_currentPiece;
+	Piece *m_currentPiece;
 	vector<vector<char>> m_board;
 	int m_depth;
 	int m_width;
 
 	// Helper functions
 	bool checkForOverlap(int newX, int newY, bool rotated = false) const;
-	// Returns true if the current piece, with the passed x, y, and orientation, will overlap 
+	// Returns true if the current piece, with the passed x, y, and orientation, will overlap
 	//	with the well, else it returns false.
 	void makePieceRest();
 	void shiftRowsDownOne(int shiftUntilThisRow);

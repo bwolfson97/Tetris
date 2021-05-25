@@ -10,7 +10,7 @@ using namespace std;
 
 class ScreenImpl
 {
-  public:
+public:
     ScreenImpl(int width, int height);
     ~ScreenImpl();
     void clear();
@@ -20,18 +20,18 @@ class ScreenImpl
     void printStringClearLine(std::string s);
     void refresh();
 
-  private:
+private:
     HANDLE m_hConsole;
     int m_width;
     int m_height;
 };
 
 ScreenImpl::ScreenImpl(int width, int height)
- : m_width(width), m_height(height)
+    : m_width(width), m_height(height)
 {
     m_hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     CONSOLE_SCREEN_BUFFER_INFO csbi;
-    if ( ! GetConsoleScreenBufferInfo(m_hConsole, &csbi))
+    if (!GetConsoleScreenBufferInfo(m_hConsole, &csbi))
         return;
     SMALL_RECT r = csbi.srWindow;
     r.Top = 0;
@@ -47,10 +47,10 @@ ScreenImpl::~ScreenImpl()
 void ScreenImpl::clear()
 {
     CONSOLE_SCREEN_BUFFER_INFO csbi;
-    if ( ! GetConsoleScreenBufferInfo(m_hConsole, &csbi))
+    if (!GetConsoleScreenBufferInfo(m_hConsole, &csbi))
         return;
     DWORD size = csbi.dwSize.X * csbi.dwSize.Y;
-    COORD pos = { 0, 0 };
+    COORD pos = {0, 0};
     DWORD num;
     FillConsoleOutputCharacter(m_hConsole, TCHAR(' '), size, pos, &num);
     FillConsoleOutputAttribute(m_hConsole, csbi.wAttributes, size, pos, &num);
@@ -59,10 +59,10 @@ void ScreenImpl::clear()
 
 void ScreenImpl::gotoXY(int x, int y)
 {
-    if (x < 0  ||  x >= m_width  ||  y < 0  ||  y >= m_height)
+    if (x < 0 || x >= m_width || y < 0 || y >= m_height)
         return;
-    COORD pos = { short(x), short(y) };
-    SetConsoleCursorPosition (m_hConsole, pos);
+    COORD pos = {short(x), short(y)};
+    SetConsoleCursorPosition(m_hConsole, pos);
 }
 
 void ScreenImpl::printChar(char ch)
@@ -135,34 +135,54 @@ void Screen::refresh()
 // Functions for Keyboard Input
 ///////////////////////////////////////////////////////////
 
-  // If the user has hit a key, set ch to that character and return true;
-  // otherwise, leave ch unchanged and return false.
-bool getCharIfAny(char& ch)
+// If the user has hit a key, set ch to that character and return true;
+// otherwise, leave ch unchanged and return false.
+bool getCharIfAny(char &ch)
 {
     if (_kbhit())
     {
         int c = _getch();
-		if (c == 0xE0)  // first of the two sent by arrow keys
+        if (c == 0xE0) // first of the two sent by arrow keys
         {
             c = _getch();
             switch (c)
             {
-              case 'K':  ch = ARROW_LEFT;  break;
-              case 'M':  ch = ARROW_RIGHT; break;
-              case 'H':  ch = ARROW_UP;    break;
-              case 'P':  ch = ARROW_DOWN;  break;
-              default:   ch = '?';         break;
+            case 'K':
+                ch = ARROW_LEFT;
+                break;
+            case 'M':
+                ch = ARROW_RIGHT;
+                break;
+            case 'H':
+                ch = ARROW_UP;
+                break;
+            case 'P':
+                ch = ARROW_DOWN;
+                break;
+            default:
+                ch = '?';
+                break;
             }
         }
         else
         {
             switch (c)
             {
-              case 'a':  ch = ARROW_LEFT;  break;
-              case 'd':  ch = ARROW_RIGHT; break;
-              case 'w':  ch = ARROW_UP;    break;
-              case 's':  ch = ARROW_DOWN;  break;
-              default:   ch = c;           break;
+            case 'a':
+                ch = ARROW_LEFT;
+                break;
+            case 'd':
+                ch = ARROW_RIGHT;
+                break;
+            case 'w':
+                ch = ARROW_UP;
+                break;
+            case 's':
+                ch = ARROW_DOWN;
+                break;
+            default:
+                ch = c;
+                break;
             }
         }
         return true;
@@ -173,7 +193,7 @@ bool getCharIfAny(char& ch)
 void waitForEnter()
 {
     int ch;
-    while (ch = _getch(), ch != '\n'  &&  ch != '\r')
+    while (ch = _getch(), ch != '\n' && ch != '\r')
         ;
 }
 

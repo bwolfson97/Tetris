@@ -33,40 +33,40 @@ const int NEXT_PIECE_Y = 4;
 ///////////////////////////////////////////////////////////////
 
 Game::Game(int width, int height)
- : m_well(width, height), m_screen(SCREEN_WIDTH, SCREEN_HEIGHT), m_level(1), m_score(0), m_rowsLeft(5)
+	: m_well(width, height), m_screen(SCREEN_WIDTH, SCREEN_HEIGHT), m_level(1), m_score(0), m_rowsLeft(5)
 {
 }
 
 void Game::play()
 {
-    m_well.display(m_screen, WELL_X, WELL_Y);
-    displayStatus();  //  score, rows left, level
-    displayPrompt("Press the Enter key to begin playing Chetyris!");
-    waitForEnter();  // [in UserInterface.h]				s
+	m_well.display(m_screen, WELL_X, WELL_Y);
+	displayStatus(); //  score, rows left, level
+	displayPrompt("Press the Enter key to begin playing Chetyris!");
+	waitForEnter(); // [in UserInterface.h]				s
 
-    for(;;)
-    {
-        if (!playOneLevel()) 
-            break;
-        displayPrompt("Good job!  Press the Enter key to start next level!");
-        waitForEnter();     
+	for (;;)
+	{
+		if (!playOneLevel())
+			break;
+		displayPrompt("Good job!  Press the Enter key to start next level!");
+		waitForEnter();
 		m_well.emptyWell();
-        m_level++;
+		m_level++;
 		m_rowsLeft = 5 * m_level;
-    }
-    displayPrompt("Game Over!  Press the Enter key to exit!");
-    waitForEnter();
+	}
+	displayPrompt("Game Over!  Press the Enter key to exit!");
+	waitForEnter();
 }
 
 ///////////////////////////////////////////////////////////////
 // Helper functions
 ///////////////////////////////////////////////////////////////
 
-void Game::displayPrompt(std::string s)     
+void Game::displayPrompt(std::string s)
 {
-    m_screen.gotoXY(PROMPT_X, PROMPT_Y);
-    m_screen.printStringClearLine(s);   // overwrites previous text
-    m_screen.refresh();
+	m_screen.gotoXY(PROMPT_X, PROMPT_Y);
+	m_screen.printStringClearLine(s); // overwrites previous text
+	m_screen.refresh();
 }
 
 void Game::displayStatus(PieceType nextPiece)
@@ -86,15 +86,14 @@ void Game::displayStatus(PieceType nextPiece)
 
 	// Display rows left
 	m_screen.gotoXY(ROWS_LEFT_X, ROWS_LEFT_Y);
-	m_screen.printStringClearLine("Rows left: ");	
-	printRightJustified(m_rowsLeft, ROWS_LEFT_X + 11, ROWS_LEFT_Y);	
+	m_screen.printStringClearLine("Rows left: ");
+	printRightJustified(m_rowsLeft, ROWS_LEFT_X + 11, ROWS_LEFT_Y);
 
 	// Display level
 	m_screen.gotoXY(LEVEL_X, LEVEL_Y);
 	m_screen.printStringClearLine("Level:     ");
 	printRightJustified(m_level, LEVEL_X + 11, LEVEL_Y);
 }
-
 
 bool Game::playOneLevel()
 {
@@ -141,7 +140,7 @@ bool Game::playOneLevel()
 			break;
 		}
 	}
-    return levelComplete; 
+	return levelComplete;
 }
 
 void Game::updateStats(int rowsVaporized)
@@ -193,7 +192,7 @@ void Game::printRightJustified(int stat, int x, int y)
 	string status = to_string(stat);
 	const int length = status.length();
 	m_screen.gotoXY(x, y);
-	
+
 	// Print status right justified in a field 7 characters wide
 	for (int i = 0; i < 7 - length; i++)
 	{
@@ -218,7 +217,7 @@ bool Game::pieceInPlay(PieceType current)
 			// Check for moves and update screen if moves are successful
 			char move('\0');
 
-			if (getCharIfAny(move))		
+			if (getCharIfAny(move))
 			{
 				type = controls(move, current);
 				if (type == NORMAL)
@@ -226,7 +225,6 @@ bool Game::pieceInPlay(PieceType current)
 				else if (type == DOWN || type == SPACEBAR || type == QUIT)
 					break;
 			}
-
 		}
 		// Deal with any special controls the user typed
 		if (type == QUIT)
@@ -251,7 +249,7 @@ bool Game::pieceInPlay(PieceType current)
 			updateStats(rowsRemoved);
 			displayStatus();
 		}
-		
+
 	} while (!m_well.readyForNextPiece() && playerDidntQuit);
 	// Repeat while piece has not come to rest
 	return playerDidntQuit;
@@ -303,9 +301,9 @@ SpecialControls Game::controls(char move, PieceType current)
 		break;
 	case 'q':
 	case 'Q':
-		control =  QUIT;
+		control = QUIT;
 		break;
-	default:	// Player hit an invalid key
+	default: // Player hit an invalid key
 		control = NOTHING;
 		break;
 	}

@@ -7,7 +7,7 @@
 ///////////////////////////////////////////////////////////////
 
 Well::Well(int width, int height)
-	:m_currentPiece(nullptr), m_board(height + 4, vector<char>(width + 5, ' ')), m_depth(height + 1), m_width(width + 2)
+	: m_currentPiece(nullptr), m_board(height + 4, vector<char>(width + 5, ' ')), m_depth(height + 1), m_width(width + 2)
 {
 	// Create walls of well
 	for (int i = 0; i < m_depth; i++)
@@ -28,7 +28,7 @@ Well::~Well()
 		delete m_currentPiece;
 }
 
-void Well::display(Screen& screen, int x, int y) const
+void Well::display(Screen &screen, int x, int y) const
 {
 	// Print out well
 	for (int i = 0; i < m_depth; i++)
@@ -117,7 +117,7 @@ int Well::updateAfterOneTimeUnit()
 		// Check if any rows need to be vaporized
 		rowsRemoved = removeRows();
 	}
-	else // No overlap 
+	else // No overlap
 	{
 		// Move the current piece down 1 unit
 		m_currentPiece->moveDown();
@@ -252,7 +252,7 @@ void Well::updatePieceOnBoard(bool lastPiece)
 	{
 		for (int col = newPieceX; col < newPieceX + BOX_LEN; col++)
 		{
-			if (row < 0 || row >= m_depth - 1 || col < 0 || col >= m_width - 1)	// Don't check out of the well
+			if (row < 0 || row >= m_depth - 1 || col < 0 || col >= m_width - 1) // Don't check out of the well
 				break;
 			// Only change what's on the board if it's an open space, except if it's the last piece
 			if (lastPiece && m_currentPiece->getBox(row - newPieceY, col - newPieceX) == '#')

@@ -9,7 +9,7 @@ using namespace std;
 
 class ScreenImpl
 {
-  public:
+public:
     ScreenImpl(int width, int height);
     ~ScreenImpl();
     void clear();
@@ -19,13 +19,13 @@ class ScreenImpl
     void printStringClearLine(std::string s);
     void refresh();
 
-  private:
+private:
     int m_width;
     int m_height;
 };
 
 ScreenImpl::ScreenImpl(int width, int height)
- : m_width(width), m_height(height)
+    : m_width(width), m_height(height)
 {
     initscr();
     noecho();
@@ -47,7 +47,7 @@ void ScreenImpl::clear()
 
 void ScreenImpl::gotoXY(int x, int y)
 {
-    if (x < 0  ||  x >= m_width  ||  y < 0  ||  y >= m_height)
+    if (x < 0 || x >= m_width || y < 0 || y >= m_height)
         return;
     move(y, x);
 }
@@ -72,7 +72,7 @@ void ScreenImpl::printStringClearLine(std::string s)
 
 void ScreenImpl::refresh()
 {
-    gotoXY(m_width-1, m_height-1);
+    gotoXY(m_width - 1, m_height - 1);
     ::refresh();
 }
 
@@ -120,23 +120,42 @@ void Screen::refresh()
 // Functions for Keyboard Input
 ///////////////////////////////////////////////////////////
 
-  // If the user has hit a key, set ch to that character and return true;
-  // otherwise, leave ch unchanged and return false.
-bool getCharIfAny(char& ch)
+// If the user has hit a key, set ch to that character and return true;
+// otherwise, leave ch unchanged and return false.
+bool getCharIfAny(char &ch)
 {
     int c = getch();
     switch (c)
     {
-      case ERR:        return false;
-      case KEY_LEFT:   ch = ARROW_LEFT;  break;
-      case KEY_RIGHT:  ch = ARROW_RIGHT; break;
-      case KEY_UP:     ch = ARROW_UP;    break;
-      case KEY_DOWN:   ch = ARROW_DOWN;  break;
-      case 'a':        ch = ARROW_LEFT;  break;
-      case 'd':        ch = ARROW_RIGHT; break;
-      case 'w':        ch = ARROW_UP;    break;
-      case 's':        ch = ARROW_DOWN;  break;
-      default:         ch = c;           break;
+    case ERR:
+        return false;
+    case KEY_LEFT:
+        ch = ARROW_LEFT;
+        break;
+    case KEY_RIGHT:
+        ch = ARROW_RIGHT;
+        break;
+    case KEY_UP:
+        ch = ARROW_UP;
+        break;
+    case KEY_DOWN:
+        ch = ARROW_DOWN;
+        break;
+    case 'a':
+        ch = ARROW_LEFT;
+        break;
+    case 'd':
+        ch = ARROW_RIGHT;
+        break;
+    case 'w':
+        ch = ARROW_UP;
+        break;
+    case 's':
+        ch = ARROW_DOWN;
+        break;
+    default:
+        ch = c;
+        break;
     }
     return true;
 }
@@ -148,7 +167,7 @@ void waitForEnter()
     do
     {
         ch = getch();
-    } while (ch != '\n'  &&  ch != '\r');
+    } while (ch != '\n' && ch != '\r');
     nodelay(stdscr, TRUE);
 }
 
