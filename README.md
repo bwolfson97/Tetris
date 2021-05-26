@@ -1,5 +1,5 @@
-# Tetris
-A class project made in my CS32 class at UCLA.
-"UserInterface" files provided as starter code. All else is my own work. Check out the report.docx for descriptions of functions and justification behind specific design decisions.
+# Chetyris
 
-Note: code is simply here to showcase my portfolio, it may not be used by current students.
+A terminal-based Tetris clone called Chetyris. Created for one of my UCLA computer science courses.
+
+Note: The `UserInterface` files were provided as starter code. All else is my own work.
