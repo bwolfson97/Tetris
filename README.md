@@ -1,4 +1,4 @@
-# Chetyris
+# Tetris
 
 A terminal-based Tetris clone called Chetyris. Created for one of my UCLA computer science courses.
 
